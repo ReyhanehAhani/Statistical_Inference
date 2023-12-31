@@ -1,0 +1,17 @@
+symboling           -0.689015
+normalized-losses    1.341492
+wheel-base           0.963276
+length              -0.110013
+width                0.656614
+height              -0.462188
+curb-weight         -0.070942
+engine-size          5.148030
+bore                -0.795149
+stroke               2.092670
+compression-ratio    5.077161
+horsepower           2.584179
+peak-rpm             0.055542
+city-mpg             0.535505
+highway-mpg          0.400284
+price                3.243836
+dtype: float64
