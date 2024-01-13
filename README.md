@@ -145,3 +145,154 @@ print(sum(expected_gains_list) / simulation_number)
 ### Description
 This code calculates the expected gains in a game where two players roll dice. The simulation is repeated a specified number of times, and the average expected gain is then printed.
 
+
+# Homework 2 - Python Code ReadMe
+
+## Part a_7: Data Loading and Initial Exploration
+
+This part loads the data from an Excel file and prints the first few rows of the dataframe. Additionally, it generates a histogram for the 'population' column.
+
+### Usage
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+file_path = 'Problem 7\Data.xls' 
+df = pd.read_excel(file_path)
+
+print("First few rows of the dataframe:")
+print(df.head())
+
+plt.hist(df['population'], bins=20, color='skyblue', edgecolor='black')
+plt.title('Histogram of Population Values for Cancer Mortality')
+plt.xlabel('Population')
+plt.ylabel('Frequency')
+plt.show()
+```
+
+## Part b_7: Basic Descriptive Statistics
+
+This part calculates and prints total cancer mortality, population mean, population variance, and population standard deviation.
+
+### Usage
+```python
+import pandas as pd
+
+file_path = 'Problem 7\Data.xls'  
+df = pd.read_excel(file_path)
+
+population_mean = df['population'].mean()
+total_mortality = df['mortalities'].sum()
+
+population_variance = df['population'].var()
+population_std_dev = df['population'].std()
+
+print("Total Cancer Mortality:", total_mortality)
+print("Population Mean:", population_mean)
+print("Population Variance:", population_variance)
+print("Population Standard Deviation:", population_std_dev)
+```
+
+## Part c_7: Sampling Distribution of the Mean
+
+This part generates a sampling distribution of the mean with a sample size of 25 and 10,000 samples.
+
+### Usage
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+np.random.seed(42)
+
+file_path = 'Problem 7\Data.xls'
+df = pd.read_excel(file_path)
+
+sample_size = 25
+num_samples = 10000
+distribution_means = []
+
+for _ in range(num_samples):
+    sample = np.random.choice(df['mortalities'], size=sample_size, replace=True)
+    sample_mean = np.mean(sample)
+    distribution_means.append(sample_mean)
+
+plt.figure(figsize=(8, 6))
+plt.hist(distribution_means, bins=100, color='skyblue', edgecolor='black')
+plt.title('Sampling Distribution of the Mean (Sample Size = 25)')
+plt.xlabel('Sample Mean')
+plt.ylabel('Frequency')
+plt.show()
+```
+
+## Part d_7: Confidence Intervals
+
+This part calculates and prints 95% confidence intervals for the mean of the population.
+
+### Usage
+```python
+import numpy as np
+import pandas as pd
+from scipy import stats
+import matplotlib.pyplot as plt
+
+np.random.seed(42)
+
+file_path = 'Problem 7\Data.xls'
+df = pd.read_excel(file_path)
+
+sample_size = 100
+sample = df.sample(sample_size)
+
+mean_sample_population = np.mean(sample['population'])
+
+# Confidence intervals calculations
+# ... (code for confidence intervals calculation)
+```
+
+## Part e_7: Ratio Estimate for Population Mean and Total Cancer Mortality
+
+This part calculates and prints ratio estimates for the population mean and total cancer mortality.
+
+### Usage
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+np.random.seed(42)
+
+file_path = 'Problem 7\Data.xls'
+df = pd.read_excel(file_path)
+
+sample_size = 25
+sample = df.sample(sample_size)
+
+mean_estimate = (sample['population'] * sample['mortalities']).sum() / sample['population'].sum()
+total_mortality_estimate = (sample['population'] * sample['mortalities']).sum()
+
+print("Ratio Estimate for Population Mean:", mean_estimate)
+print("Ratio Estimate for Total Cancer Mortality:", total_mortality_estimate)
+```
+
+## Part m_7: Stratified Sampling - Fractional Allocation
+
+This part performs stratified sampling with four strata, calculates the sampling fractions using proportional and optimal allocation, and computes the variances for simple random sampling, proportional allocation, and optimal allocation.
+
+### Usage
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+np.random.seed(42)
+
+file_path = 'Problem 7\Data.xls'
+df = pd.read_excel(file_path)
+
+num_strata = 4
+
+# ... (code for stratified sampling and variance calculations)
+```
+
+Feel free to use and modify the code for further analysis and exploration.
