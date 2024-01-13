@@ -295,4 +295,66 @@ num_strata = 4
 # ... (code for stratified sampling and variance calculations)
 ```
 
-Feel free to use and modify the code for further analysis and exploration.
+# Homework 3 - Python Code ReadMe
+
+This repository contains Python scripts for data analysis and statistical tests. Below is a summary of the scripts and their functionality.
+
+## Contents
+
+### Question 3_1 - Age Distribution Visualization
+
+File: `question_3_1.py`
+
+This script uses Matplotlib to create a histogram showing the age distribution of male and female fans. It uses data arrays `men_ages` and `women_ages` to generate the plot.
+
+### Question 3_2 - Normality Test and Q-Q Plot
+
+File: `question_3_2.py`
+
+This script performs a Kolmogorov-Smirnov test on the ages of men using SciPy's `kstest`. Additionally, it creates a Q-Q plot using the `probplot` function from SciPy.
+
+### Question 4_2 - Random Number Classification
+
+File: `question_4_2.py`
+
+Here, a probability matrix is flattened, and pseudo-random numbers are generated to classify observations based on the specified conditions. The counts in each cell and an example of the first few observations are displayed.
+
+### Question 4_4 - Chi-Squared Goodness-of-Fit Test
+
+File: `question_4_4.py`
+
+This script uses the generated data from Question 4_2 to perform a chi-squared goodness-of-fit test. It calculates observed and expected counts, then checks the hypothesis at a significance level of 0.05.
+
+### Question 8_1 - Kolmogorov-Smirnov Test for Uniform Distribution
+
+File: `question_8_1.py`
+
+The script performs a Kolmogorov-Smirnov test on given data to determine if it follows a uniform distribution.
+
+### Question 8_2 - Maximum Difference Calculation
+
+File: `question_8_2.py`
+
+This script calculates the maximum difference between corresponding elements of two data arrays, `data1` and `data2`.
+
+### Question 3_6 - Mann-Whitney U Test
+
+File: `question_3_6.py`
+
+The Mann-Whitney U test is performed on the ages of men and women to compare the distributions.
+
+## Instructions
+
+1. Ensure you have Python installed on your system.
+2. Clone this repository to your local machine.
+3. Run the scripts using a Python interpreter:
+
+   ```bash
+   python question_3_1.py
+   python question_3_2.py
+   python question_4_2.py
+   python question_4_4.py
+   python question_8_1.py
+   python question_8_2.py
+   python question_3_6.py
+   ```
