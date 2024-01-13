@@ -145,4 +145,3 @@ print(sum(expected_gains_list) / simulation_number)
 ### Description
 This code calculates the expected gains in a game where two players roll dice. The simulation is repeated a specified number of times, and the average expected gain is then printed.
 
-Feel free to use, modify, and experiment with these functions for your analysis.
